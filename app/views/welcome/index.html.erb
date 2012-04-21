@@ -1,0 +1,53 @@
+<div class="row">
+  <%= form_tag 'calculate', :method => :get, :class => "well form-horizontal " do %>
+
+    <p>If you are able to work flexibly then this simple site will attempt to calculate the best days and times for you to
+    cycle to work <%= @week_text %>.</p>
+
+    <% if @warning %>
+      <p class = "forecast_warning"><%= @warning %></p>
+    <% end %>
+
+    <div class="control-group">
+      <label class="control-label">I live at</label>
+      <div class="controls">
+        <%= text_field_tag 'geog1', @geog1, {"data-default" => WelcomeController::DEFAULT_GEOG_MESSAGE, :class => 'clear', :maxlength => 60} %>
+      </div>
+    </div>
+    <%= hidden_field_tag 'lat1', @lat1 %>
+    <%= hidden_field_tag 'lng1', @lng1 %>
+
+    <div class="control-group">
+      <label class="control-label">My office is at</label>
+      <div class="controls">
+        <%= text_field_tag 'geog2', @geog2, {"data-default" => WelcomeController::DEFAULT_GEOG_MESSAGE, :class => 'clear', :maxlength => 60} %>
+      </div>
+    </div>
+    <%= hidden_field_tag 'lat2', @lat1 %>
+    <%= hidden_field_tag 'lng2', @lng1 %>
+
+    <div class="control-group">
+      <label class="control-label">Days I need to be in:</label>
+      <div class="controls">
+        Minimum <%= number_field_tag 'mindays', @mindays, :class => "span1"  %>
+        Maximum <%= number_field_tag 'maxdays', @maxdays, :class => "span1"  %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label">Hours I need to be in:</label>
+      <div class="controls">
+        Minimum <%= number_field_tag 'minhours', @minhours, :class => "span1"  %>
+        Maximum <%= number_field_tag 'maxhours', @maxhours, :class => "span1"  %>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div style="width: 100px; margin-left:auto; margin-right: auto">
+        <%= submit_tag "Show me the weather", :name => nil, :id => "submit", :class => "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+

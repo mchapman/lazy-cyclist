@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+  <title>Cycle2Work</title>
+  <meta name="keywords" content="cycle, weather, wind assisted, sunny" />
+  <meta name="description" content="A quick hack to see if the wind can help get you to work, using @metoffice data" />
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+  <![endif]-->
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= yield(:head) %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="http://www.metoffice.gov.uk/favicon.ico" />
+
+</head>
+<body>
+
+<div class="container">
+  <%= raw(flash_messages) %>
+  <div class="row">
+    <div class="offset1 span10">
+    <h1>The Lazy Cyclist</h1>
+    <%= yield %>
+    </div>
+  </div>
+  <hr>
+  <footer>
+    <div class="pull-left"><p>Copyright(c) 2011-12 <%=  link_to "ReallyCare CIC", "http://www.reallycare.org" %></p></div>
+    <div class="pull-right" style="margin-right: 8px;">
+      <ul class="nav">
+        <li><%= link_to 'Open Source', url_for(opensource_url) %></li>
+        <li><%= link_to 'Privacy', url_for(privacy_url) %></li>
+        <li><%= link_to 'Terms & Conditions', url_for(terms_url) %></li>
+        <li><%= link_to 'Contact', url_for(contact_url) %></li>
+        <li><%= link_to 'About', url_for(about_url) %></li>
+      </ul>
+    </div>
+  </footer>
+</div>
+</body>
+</html>

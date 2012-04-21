@@ -1,0 +1,19 @@
+<p>According to the very simplified sums I have just done (which uses crow flies distance and ignores hills) your
+journey is <%= "%0.2f" % @distance %> miles at a bearing of <%= @bearing_in.to_i %>&deg; (in a <%= @direction %> direction).</p>
+
+<table class="table table-striped">
+  <thead>
+    <th>Day</th>
+    <th>In</th>
+    <th>Out</th>
+  </thead>
+  <tbody>
+    <% @days.each do |day| %>
+      <tr>
+        <td><%= display_day(day) %></td>
+        <td><%= conditions(day["9am"], @bearing_in) %></td>
+        <td><%= conditions(day["6pm"], @bearing_home) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

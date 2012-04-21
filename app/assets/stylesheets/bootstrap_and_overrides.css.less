@@ -1,0 +1,197 @@
+@import "twitter/bootstrap/bootstrap";
+body { padding-top: 60px; }
+
+@import "twitter/bootstrap/responsive";
+
+// Set the correct sprite paths
+@iconSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings.png');
+@iconWhiteSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings-white.png');
+
+// Your custom LESS stylesheets goes here
+//
+// Since bootstrap was imported above you have access to its mixins which
+// you may use and inherit here
+//
+// If you'd like to override bootstrap's own variables, you can do so here as well
+// See http://twitter.github.com/bootstrap/less.html for their names and documentation
+//
+// Example:
+// @linkColor: #ff0000;
+/* landing page mods (large fonts) */
+
+.caresrch { font-size: 140%;  }
+.caresrch .control-label { font-size: 100%;  }
+
+.siteintro p {font-size: 13pt; color: #999}
+.caresrch label, .caresrch input, .caresrch button, .caresrch select, .caresrch textarea{ font-size: 100%;  }
+#search-btn-div {padding-left: 11px;}
+
+
+/* footer styles */
+footer ul, footer li {
+  float: right;
+  display: block;
+  list-style : none;
+  margin: 0;
+}
+
+footer a, footer p {
+  color: #7f6d77;
+  background-color: #fff;
+  text-decoration: none;
+  padding-left: 8px;
+  font-size: small;
+}
+
+footer a:hover {
+  color : #0066b3;
+}
+
+/* Get old  will_paginate styling working */
+.pagination em, .pagination span {
+  float: left;
+  padding: 0 14px;
+  line-height: 34px;
+  text-decoration: none;
+  border: 1px solid #ddd;
+  border-left-width: 0;
+  background-color: #f5f5f5;
+  color: #999999;
+  cursor: default;
+}
+
+.pagination a:first-child, .pagination span:first-child {
+  border-left-width: 1px;
+  -webkit-border-radius: 3px 0 0 3px;
+  -moz-border-radius: 3px 0 0 3px;
+  border-radius: 3px 0 0 3px;
+}
+.pagination a:last-child, .pagination span:last-child  {
+  -webkit-border-radius: 0 3px 3px 0;
+  -moz-border-radius: 0 3px 3px 0;
+  border-radius: 0 3px 3px 0;
+}
+/* End of will_paginate styling
+
+/* Rating star stuff */
+/*
+* Style by Rogie http://www.komodomedia.com/blog/2007/01/css-star-rating-redux/
+*/
+
+.jsstars,
+.jsstars a:hover,
+.jsstars a:active,
+.jsstars a:focus,
+.jsstars .show-value{
+  background: url(/assets/star.png) left -1000px repeat-x;
+}
+.jsstars{
+  position: relative;
+  width: 125px;
+  height: 25px;
+  overflow: hidden;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-position: left top;
+}
+.jsstars li{ display: inline; }
+.jsstars a,
+.jsstars span,
+.jsstars .show-value{
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-indent: -1000em;
+  height: 25px;
+  line-height: 25px;
+  outline: none;
+  overflow: hidden;
+  border: none;
+}
+
+.jstarget a {width : 25px}
+
+.jsstars a:hover,
+.jsstars a:active,
+.jsstars a:focus{
+  background-position: left bottom;
+}
+
+.jsstars .stars-1{
+  width: 20%;
+  z-index: 6;
+}
+.jsstars .stars-2{
+  width: 40%;
+  z-index: 5;
+}
+.jsstars .stars-3{
+  width: 60%;
+  z-index: 4;
+}
+.jsstars .stars-4{
+  width: 80%;
+  z-index: 3;
+}
+.jsstars .stars-5{
+  width: 100%;
+  z-index: 2;
+}
+
+.jsstars .show-value{
+/*    z-index: 1;*/
+  background-position: left center;
+}
+
+/* smaller star */
+.jsstars.small{
+  width: 50px;
+  height: 10px;
+}
+.jsstars.small,
+.jsstars.small a:hover,
+.jsstars.small a:active,
+.jsstars.small a:focus,
+.jsstars.small .show-value{
+  background-image: url(/assets/star_small.png);
+  line-height: 10px;
+  height: 10px;
+}
+
+.rating {
+  width: 55px;
+  background: url(/assets/star_x_grey.gif) 0 0 repeat-x;
+}
+
+.rating div {
+  height: 12px;
+  background: url(/assets/star_x_orange.gif) 0 0 repeat-x;
+}
+
+/* end of rating section */
+/* Make tabbable work with progressive enhancement */
+.tab-content > .pe, .pill-content > .pe {
+  display: block;
+}
+
+/* Field Errors */
+
+.field_with_errors > label, .field_with_errors .help-block, .field_with_errors .help-inline {
+  color: #b94a48;
+}
+.field_with_errors input, .field_with_errors select, .field_with_errors textarea {
+  color: #b94a48;
+  border-color: #b94a48;
+}
+.field_with_errors input:focus, .field_with_errors select:focus, .field_with_errors textarea:focus {
+  border-color: #953b39;
+  -webkit-box-shadow: 0 0 6px #d59392;
+  -moz-box-shadow: 0 0 6px #d59392;
+  box-shadow: 0 0 6px #d59392;
+}
+.field_with_errors .input-prepend .add-on, .field_with_errors .input-append .add-on {
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #b94a48;}
+
